@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <pre>
+
+        <h1>Welcome to login page</h1>
+        {%if error%}
+        {{error}}
+        {%endif%}
+    <form action="{%url 'login'%}" method="POST">
+        {%csrf_token%}
+
+        <label for="username">Username</label>
+        <input type="text" name="username">
+
+        <label for="Password">Password</label>
+        <input type="password" name="password">
+
+        <button type="submit">Login</button>
+
+    </form>
+</pre>
+
+
+    </body>
+</html>

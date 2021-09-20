@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Signup</title>
+
+    </head>
+    <body>
+
+
+        <form action="{%url 'signup'%}" method="POST">
+            {% csrf_token %}
+
+
+            <pre>  
+        <label for="username">Username</label>
+        {%if username_error%}
+        {{username_error}}
+        {%endif%}
+
+        <input type="text" name="uname" placeholder="username">
+
+
+        <label for="first_name">First Name</label>
+        <input type="text" name="fname" placeholder="first name" >
+
+
+        <label for="last_name">Last Name</label>
+        <input type="text" name="lname" placeholder="Last Name">
+
+
+        <label for="email_id">Email</label>
+        {%if email_error%}
+        {{email_error}}
+        {%endif%}
+        <input type="email" name="email_id"placeholder="Email" >
+
+        <label for="phone_number">Phone Number</label>
+        {%if phone_error%}
+        {{phone_error}}
+        {%endif%}
+        <input type="number" name=phone_number placeholder="123">
+
+        <label for="gender">Male</label>
+        <input type="radio" name="gender_data" value="Male">
+
+        <label for="gender">Female</label>
+        <input type="radio" name="gender_data" value="Female">
+
+
+        <label for="gender">Other</label>
+        <input type="radio" name="gender_data" value="Other">
+
+
+        <label for="password">password</label>
+        <input type="password" name="pass1">
+
+
+        <label for="cnf_pass">confirm password</label>
+
+
+        <input type="password" name='pass2'>
+
+
+        <button type="submit">submit</button>
+
+
+        <a href="{%url 'login'%}">Already have an account</a>
+    </pre>
+
+    </form>
+
+ 
+    </body>
+</html>
