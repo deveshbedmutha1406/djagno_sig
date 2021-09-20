@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>HOME</title>
+
+        <style>
+
+            button{
+                background-color:rgb(231, 128, 31);
+                width: 100px;
+                height: 30;
+                padding: 1px;
+                text-align: center;
+                cursor: pointer;
+                margin-left: 80px;
+                margin-top: 10px;
+                
+
+                
+            }
+
+            input[type=number]{
+
+
+                text-align: center;
+                width: 300px;
+                margin: 10px;
+                height: 30;
+                border-radius: 20px;
+                border-color: rgb(20, 2, 2);
+                border-width: thick;
+                border-bottom-color: rgb(1, 15, 15);
+                
+
+            }
+        </style>
+
+    </head>
+    <body>
+
+        {%if num%}
+
+        {% for i in num%}
+        <h1>{{i}}</h1>
+
+        {%endfor%}
+
+        <button type="button"> <a href="{%url 'base' %}">Home</a> </button>
+
+        {%else%}
+
+
+        <form action="{% url 'base'%}" method="POST">
+
+            {% csrf_token %}
+            <input type="number" name="num" placeholder="NUMBER">
+            <button type="submit">submit</button>
+            
+        </form>
+
+
+        {%endif%}
+
+    </body>
+</html>
